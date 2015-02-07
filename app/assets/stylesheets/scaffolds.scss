@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #faebd7;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -40,14 +40,26 @@ div {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
+  padding: 5px;
+  margin: 5px;
+  background-color: #D4D4D4;
+  color: #F00;
+  border-radius: 5px;
+  display: table;
+}
+.field_with_errors:hover{
+  padding: 5px;
+  margin: 5px;
+  background-color: #F00;
+  color: #D4D4D4;
+  border-radius: 5px;
   display: table;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px dotted red;
+  border-radius: 10px;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
@@ -59,11 +71,18 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff;
+    background-color: #D4D4D4;
+    color: #F00;
   }
   ul li {
     font-size: 12px;
     list-style: square;
+  }
+}
+
+#error_explanation:hover {
+    h2 {
+    background-color: #F00;
+    color: #D4D4D4;
   }
 }
