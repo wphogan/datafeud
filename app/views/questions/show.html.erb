@@ -1,0 +1,382 @@
+<% provide(:title, 'Questions') %>
+<% ques_helper %>
+<!--question-->
+
+
+<div class="row">
+  <div class="col-md-7"></div>
+  <div class="col-md-5">
+    <div class="timer">
+       <i class="fa fa-clock-o"></i>
+       <span id="countdown">01:00</span>
+       <form id="example2form" style="display: inline;"  >
+          <input type='button' value='&#xf04b;  &#448;  &#xf04c;' onclick='Example2.Timer.toggle();' /> <input type='button' value='&#xf04d;  &#448;  &#xf112;' onclick='Example2.resetCountdown();' />
+        </form>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12"  id="gameboard">
+    <div id="card-0" class="card"> 
+      <div class="front" id="f_quesiton"> 
+        <i class="fa fa-question-circle"></i>
+      </div> 
+      <div class="back" id="b_question">
+        <%= "#{@question.content}" %>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer1 != "" %>
+         <div class="answer">
+          <div id="card-1" class="card"> 
+             <div class="front"> 
+              <strong>1</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer1 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer2 != "" %>
+         <div class="answer">
+          <div id="card-2" class="card"> 
+             <div class="front"> 
+              <strong>2</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer2 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+</div>
+
+<!--answer row 2-->
+<div class="row">
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer3 != "" %>
+         <div class="answer">
+          <div id="card-3" class="card"> 
+             <div class="front"> 
+              <strong>3</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer3 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer4 != "" %>
+         <div class="answer">
+          <div id="card-4" class="card"> 
+             <div class="front"> 
+              <strong>4</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer4 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+</div>
+
+<!--answer row 3-->
+<div class="row">
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer5 != "" %>
+         <div class="answer">
+          <div id="card-5" class="card"> 
+             <div class="front"> 
+              <strong>5</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer5 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer6 != "" %>
+         <div class="answer">
+          <div id="card-6" class="card"> 
+             <div class="front"> 
+              <strong>6</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer6 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+</div>
+
+<!--answer row 4-->
+<div class="row">
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer7 != "" %>
+         <div class="answer">
+          <div id="card-7" class="card"> 
+             <div class="front"> 
+              <strong>7</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer7 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+  <div class="col-md-6" id="gameboard">
+    <% if @question.answer8 != "" %>
+         <div class="answer">
+          <div id="card-8" class="card"> 
+             <div class="front"> 
+              <strong>8</strong>
+            </div> 
+            <div class="back">
+              <%= "#{ @question.answer8 }" %> 
+            </div> 
+          </div>
+        </div>
+      <% else %>
+        <div class="emptyanswer"></div>
+    <% end %>
+  </div>
+</div>
+
+<!---->
+<!--scoreboard row-->
+<!---->
+
+
+
+<div class="row" id="scoreboard">
+  <div class="col-md-4" >
+    <div class="team1_board" onclick="active_team1()" id="t1_board">
+      <div id="team1"></div>
+      <div id="team1_score">0</div>
+    </div>
+  </div>
+  <div class="col-md-4"  >
+    <div class="strike_board" id = "s_board"> 
+      Strikes: 
+      <div id="strikes" onclick="add_strike()">-</div>
+    </div>
+  </div>
+  <div class="col-md-4"  >
+    <div class="team2_board" onclick="active_team2()"  id="t2_board">
+      <div id="team2"></div>
+      <div id="team2_score">0</div>
+    </div>
+  </div>
+</div>
+<hr/>
+
+
+<!---->
+<!--next question nav-->
+<!---->
+
+<!--if theres a next question-->
+
+<div class="next_question">
+<% if @question.id < @question_ids.max %>
+  <!--link to next question-->
+  <% @next = @question.id + 1 %>
+   <a class='inline' href="#inline_content">Next <i class='fa fa-arrow-right'></i></a><br>
+<!--else, link to end of game-->
+  <% else %>
+    <a class='inline' href="#inline_content">Finish <i class='fa fa-flag-checkered'></i></a><br>
+<% end %>
+</div>
+
+<!--if first question-->
+<div class="previous_question">
+<% if @question.id == @question_ids.min %>
+    <!--  link to beginning-->
+   <%= link_to raw("<i class='fa fa-reply'></i> Go back"),  game_questions_path(@game.id) %><br>
+<!--else, link to previous question-->
+  <% else %>
+    <% @previous = @question.id - 1 %>
+    <%= link_to raw("<i class='fa fa-arrow-left'></i> Previous"),  game_question_path(@question.game_id, @previous ) %><br>
+  <% end %>
+</div>
+
+
+
+
+<!---->
+<!-- This contains the hidden content for inline calls -->
+<!---->
+<div style='display:none'>
+	<div id='inline_content'>
+    <div class="row" >
+      <div class="col-md-12" id="pop_title">
+        <h2>Set score:</h2>
+      </div>
+    </div>
+	  <div class="row" >
+      <div class="col-md-6" id="t1_name_pop"></div>
+      <div class="col-md-6" id="t2_name_pop"></div>
+    </div>
+    <br>
+    <div class="row" >
+      <div class="col-md-6" id="t1_score_pop"></div>
+      <div class="col-md-6" id="t2_score_pop"></div>
+    </div>
+    <br>
+    <div class="row" >
+    <div class="col-md-6">
+        <button type="button" class="btn" onclick="sub_from_t1()"><i class="fa fa-minus"></i> </button>
+        <button type="button" class="btn" onclick="add_to_t1()"><i class="fa fa-plus"></i></button>
+      </div>
+      <div class="col-md-6">
+        <button type="button" class="btn" onclick="sub_from_t2()"><i class="fa fa-minus"></i> </button>
+        <button type="button" class="btn" onclick="add_to_t2()"><i class="fa fa-plus"></i></button>
+      </div>
+    </div>
+    <br>
+    <!--if theres a next question-->
+<div class="next_question" style="font-size: 1em;">
+<% if @question.id < @question_ids.min %>
+  <!--link to next question-->
+  <% @next = @question.id + 1 %>
+  <%= link_to raw("Next <i class='fa fa-arrow-right'></i>"),  game_question_path(@question.game_id, @next) %><br>
+<!--else, link to end of game-->
+  <% else %>
+   <%= link_to raw("Finish <i class='fa fa-flag-checkered'></i>"),  "finish_game" %><br>
+<% end %>
+</div>
+  </div>
+</div>
+		
+<script>
+if (isNaN($.cookie('t1_score'))) {
+  $.cookie('t1_score', parseInt(0), { expires: 1, path: '/' });
+}
+if (isNaN($.cookie('t2_score'))) {
+  $.cookie('t2_score', parseInt(0), { expires: 1, path: '/' });
+}
+
+
+document.getElementById("team1").innerHTML = $.cookie('t1');
+document.getElementById("team2").innerHTML = $.cookie('t2');
+document.getElementById("t1_name_pop").innerHTML = $.cookie('t1');
+document.getElementById("t2_name_pop").innerHTML = $.cookie('t2');
+document.getElementById("team1_score").innerHTML = $.cookie('t1_score');
+document.getElementById("team2_score").innerHTML = $.cookie('t2_score');
+document.getElementById("t1_score_pop").innerHTML = $.cookie('t1_score');
+document.getElementById("t2_score_pop").innerHTML = $.cookie('t2_score');
+
+				//Examples of how to assign the Colorbox event to elements
+       
+				$(".inline").colorbox({inline:true, width:"50%"});
+				//Example of preserving a JavaScript event for inline calls.
+				$("#click").click(function(){ 
+					$('#click').css({"background-color":"#f00", "color":"#fff", "cursor":"inherit"}).text("Open this window again and this message will still be here.");
+					return false;
+				});
+
+function add_to_t1(){
+  var x = $.cookie('t1_score');
+  x = parseInt(x) + 1;
+   $.cookie('t1_score', x, { expires: 1, path: '/' });
+    document.getElementById("t1_score_pop").innerHTML = x;
+}
+function add_to_t2(){
+  var y = $.cookie('t2_score');
+ y = parseInt(y) + 1;
+   $.cookie('t2_score', y, { expires: 1, path: '/' });
+    document.getElementById("t2_score_pop").innerHTML = y;
+}
+function sub_from_t1(){
+  var x = $.cookie('t1_score');
+  x = parseInt(x) - 1;
+   $.cookie('t1_score', x, { expires: 1, path: '/' });
+    document.getElementById("t1_score_pop").innerHTML = x;
+}
+function sub_from_t2(){
+  var y = $.cookie('t2_score');
+ y = parseInt(y) - 1;
+   $.cookie('t2_score', y, { expires: 1, path: '/' });
+    document.getElementById("t2_score_pop").innerHTML = y;
+}
+
+  var strikes= 0;
+  function add_strike(strike) {
+    var exes = "";
+    strikes = strikes + 1;
+    for (i = 0; i < strikes; i++) { 
+       exes = exes + "X";
+    }
+    if (strikes == 1) {
+       $('#s_board').toggleClass('strike_board', 0).toggleClass('strike_board_green', 0);
+    }
+    if (strikes == 2) {
+      $('#s_board').toggleClass('strike_board_green', 0).toggleClass('strike_board_yellow', 0);
+    }
+    if (strikes == 3) {
+      $('#s_board').toggleClass('strike_board_yellow', 0).toggleClass('strike_board_red', 0);
+    }
+    if (strikes > 3) {
+       $('#s_board').toggleClass('strike_board_red', 0).toggleClass('strike_board', 0);
+       exes = "-";
+       active_team1();
+       strikes = 0;
+    }
+    document.getElementById("strikes").innerHTML = exes;
+  }
+  function active_team1() {
+     if ( $( "#t1_board" ).hasClass( "team1_board" ) ) {
+       $('#t1_board').attr("class", 'team1_board_active');
+       $('#t2_board').attr("class","team2_board");
+    }
+    else if ( $( "#t1_board" ).hasClass( "team1_board_active" ) ){
+      $('#t1_board').attr("class", 'team1_board');
+       $('#t2_board').attr("class","team2_board_active");
+      
+    }
+     
+  }
+  function active_team2() {
+     if ( $( "#t2_board" ).hasClass( "team2_board" ) ) {
+       $('#t2_board').attr("class", 'team2_board_active');
+       $('#t1_board').attr("class","team1_board");
+    }
+    else if ( $( "#t2_board" ).hasClass( "team2_board_active" ) ){
+      $('#t2_board').attr("class", 'team2_board');
+       $('#t1_board').attr("class","team1_board_active");
+      
+    }
+     
+  }
+</script>
+

@@ -1,0 +1,28 @@
+<div class="parallax-window" data-parallax="scroll"  data-bleed="20" data-image-src="/images/feature_title.png" speed="0.5"></div>
+  <div class="container">
+    <div class="row">
+     <div class="col-md-4">
+       <a href="https://www.z2systems.com/np/clients/datacenter/donation.jsp"><img alt="Donate Icon" class="menu_icon" src="/images/donate_img.png" />
+       <span class="widget_title"><h3>Donate</h3></span></a>
+       <b>Data Feud is supported by donors like you.</b> If you find value in this app, help ensure we have the resources to keep it running. Donate to DataCenter today!
+     </div>
+     <div class="col-md-4">
+       <a href="http://www.datacenter.org/research-tools/research/"><img alt="Tools Icon" class="menu_icon" src="/images/tools_img.png" />
+      <span class="widget_title"><h3>More DataCenter Tools</h3></a>
+       Check out DataCenter's other free resources. 
+     </div>
+     <div class="col-md-4">
+       
+       <% if logged_in? %>
+         <%= link_to raw("<img alt='Quick Start Icon' class='menu_icon' src='/images/play_img.png' />
+         <span class='widget_title'><h3>My Games</h3>"), current_user %> 
+         Welcome back! Click to go straight to the games you've created.
+       <% else %>
+         <%= link_to raw("<img alt='Sign Up Icon' class='menu_icon' src='/images/signup_img.png' />
+         <span class='widget_title'><h3>Sign Up</h3>"), login_path %>
+         Create an account and make your first Data Feud game!
+       <% end %>
+     </div>
+   </div>
+<!--open container div goes into application layout-->
+ 

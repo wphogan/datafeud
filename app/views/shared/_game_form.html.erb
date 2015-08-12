@@ -1,0 +1,18 @@
+<div id="accordion">
+    <h3><i class="fa fa-plus"></i> Create New Game</h3>
+    <div>
+      <%= form_for(@game) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div class="field">
+        <%= f.text_area :game_name, placeholder: "Game title" %>
+        <%= f.text_area :issue_area, placeholder: "Issue area" %>
+        <%= f.text_area :summary, placeholder: "Game summary" %>
+        <%= label_tag(:private_game, "Private") %>
+        <%= f.radio_button :private_game, true , :checked => true , :value => true %>
+        <%= label_tag(:private_game, "Public") %>
+        <%= f.radio_button :private_game, false, :value => false%>
+      </div>
+      <%= f.submit "Save & Add questions", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

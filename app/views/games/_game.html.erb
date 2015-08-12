@@ -1,0 +1,58 @@
+<li id="game-<%= game.id %>">
+  
+  <%= link_to gravatar_for(game.user, size: 50), game.user %>
+  <span class="game_name"><b><%= "Title:" %></b><%= " #{game.game_name}" %></span>
+  
+  <% if !game.issue_area.blank? %>
+    <span class="game_name"><b><%= "Issue area:" %></b><%= " #{game.issue_area}"%></span>
+  <% end %>
+  
+  <% if !game.summary.blank? %>
+    <span class="game_name"><b><%= "Summary:" %></b><%= " #{game.summary}"%></span>
+  <% end %>
+  
+    <span class="game_name"><b><%= "Questions:" %></b>
+      <% if game.questions.any? %>
+        <% game.questions.each do |ques| %>
+          <% if current_user?(game.user) %>
+            <br>
+            <span class="question_list" >
+              <%= ques.content %>
+            </span>
+            <!--#link_to "delete", ques, method: :delete,-->
+            <!--                             #data: { confirm: "You sure?" } -->
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= " This game has no questions yet. " %>
+      <% end %>
+      
+    </span>
+ 
+  <% if game.private_game? %>
+    <span class="game_name"><b><%= "Private game" %></b></span>
+  <% else %>
+    <span class="game_name"><b><%= "Public game" %></b></span>
+  <% end %>
+  
+  <span class="timestamp">
+    Created <%= time_ago_in_words(game.created_at) %> ago.
+    <% if current_user?(game.user) %>
+      <br>
+       <% if game.questions.any? %>
+          <%= link_to  raw("<i class='fa fa-play'></i> Play"), game_questions_path(game) %>
+        <% else %>
+          <%= raw("<i class='fa fa-play'></i> Play") %>
+        <% end %>
+      | 
+      <%= link_to  raw("<i class='fa fa-plus'></i> Add question"), new_game_question_path(game) %>
+      |
+      <%= link_to  raw("<i class='fa fa-pencil'></i> Edit"), edit_game_path(game) %>
+      | 
+      <%= link_to  raw("<i class='fa fa-trash-o'></i> Delete"), game, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+      | 
+      <%= link_to  raw("<i class='fa fa-print'></i> Print Answer Key"), "../#{game.id}/print_game" %>
+    <% end %>
+  </span>
+</li>

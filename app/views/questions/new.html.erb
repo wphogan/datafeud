@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+        <h3>Add a question:</h3>
+        <%= form_for [@game, @question] do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="field">
+                <%= f.text_area :content, placeholder: "Enter question here..." %>
+            </div>
+        <%= f.submit "Save & Add Answers", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,225 @@
+<% provide(:title, 'Finish') %>
+<% ques_helper %>
+<div id="congrats"></div>
+<div class="row" id="scoreboard">
+  <div class="col-md-6" >
+    <div class="team1_board" id="t1_board">
+      <div id="team1"></div>
+      <div id="team1_score">0</div>
+    </div>
+  </div>
+  <div class="col-md-6"  >
+    <div class="team2_board"  id="t2_board">
+      <div id="team2"></div>
+      <div id="team2_score">0</div>
+    </div>
+  </div>
+</div>
+<!--go back to last question-->
+<div class="previous_question">
+<% @previous = @question_ids.max %>
+<%= link_to raw("<i class='fa fa-reply'></i> Go Back"),  game_question_path(@game.id, @previous ) %><br>
+</div>
+
+
+
+<!--review game-->
+<% @ques_num = 0 %>
+    <br>
+      <% if @game.questions.any? %>
+        <% @game.questions.each do |ques| %>
+        <% @ques_num = @ques_num + 1 %>
+          <% if current_user?(@game.user) %>
+            <div class="row">
+            <div class="col-md-12"  id="mock_gameboard">
+                <div id="mock_card-0" class="mock_card"> 
+                  <div class="mock_back">
+                    <b>
+                      <%= "##{@ques_num}. "%>
+                      <%= "#{ques.content}" %>
+                    </b>
+                  </div> 
+                </div>
+              </div>
+            </div>
+      
+            <div class="row">
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer1 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-1" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>1.</b>
+                          <%= "#{ ques.answer1 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer2 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-2" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>2.</b>
+                         
+                          <%= "#{ ques.answer2 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+            </div>
+
+            <!--answer row 2-->
+            <div class="row">
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer3 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-3" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>3.</b>
+                          <%= "#{ ques.answer3 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer4 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-4" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>4.</b>                   
+                          <%= "#{ ques.answer4 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+            </div>
+
+            <!--answer row 3-->
+            <div class="row">
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer5 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-5" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>5.</b>
+                          <%= "#{ ques.answer5 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer6 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-6" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>6.</b>
+                        
+                          <%= "#{ ques.answer6 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+            </div>
+
+            <!--answer row 4-->
+            <div class="row">
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer7 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-7" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>7.</b>
+                        
+                          <%= "#{ ques.answer7 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+              <div class="col-xs-6" class = "mock_gameboard">
+                <% if ques.answer8 != "" %>
+                     <div class="mock_answer">
+                      <div id="mock_card-8" class="mock_card"> 
+                         <div class="mock_front"> 
+                          <b>8.</b>
+                        
+                          <%= "#{ ques.answer8 }" %> 
+                        </div> 
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="mock_emptyanswer"></div>
+                <% end %>
+              </div>
+            </div>
+             <hr>
+          <% end %>
+        <% end %>
+     
+      <% else %>
+        <%= " This game has no questions yet. " %>
+      <% end %>
+      
+
+<!--end review game-->
+<script>
+if (isNaN($.cookie('t1_score'))) {
+  $.cookie('t1_score', parseInt(0), { expires: 1, path: '/' });
+}
+if (isNaN($.cookie('t2_score'))) {
+  $.cookie('t2_score', parseInt(0), { expires: 1, path: '/' });
+}
+var team1_final =  parseInt($.cookie('t1_score'));
+var team2_final =  parseInt($.cookie('t2_score'));
+document.getElementById("team1").innerHTML = $.cookie('t1');
+document.getElementById("team2").innerHTML = $.cookie('t2');
+document.getElementById("team1_score").innerHTML = $.cookie('t1_score');
+document.getElementById("team2_score").innerHTML = $.cookie('t2_score');
+
+var winner = "";
+if (team1_final > team2_final) {
+  $('#t1_board').attr("class", 'team1_board_active');
+  $('#t2_board').attr("class","team2_board");
+  winner = $.cookie('t1') + " is the winner!";
+}
+else if (team1_final < team2_final){
+  $('#t1_board').attr("class", 'team1_board');
+  $('#t2_board').attr("class","team2_board_active");
+  winner = $.cookie('t2')+ " is the winner!";
+}
+else {
+  $('#t1_board').attr("class", 'team1_board_active');
+  $('#t2_board').attr("class","team2_board_active");
+  winner= "It's a tie!"
+}
+
+document.getElementById("congrats").innerHTML = winner;
+
+
+    
+
+
+
+</script>
+

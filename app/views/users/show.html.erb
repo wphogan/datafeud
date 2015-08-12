@@ -1,14 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+        <div class="user_info">
+          <span><%= link_to "View my profile", current_user %></span>
+          <span> <%= pluralize(current_user.games.count, "game") %></span>
+        </div>
+      
+    </section>
+    <section class="game_form">
+      <%= render 'shared/game_form' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.games.any? %>
+      <h3>Games: </h3>
+      <ol class="games">
+        <%= render @games %>
+      </ol>
+      <%= will_paginate @games %>
+    <% end %>
+  </div>
+</div>

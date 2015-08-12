@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+     <%= form_for [@game, @questions] do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+            <%= f.text_area :content, placeholder: "Question content..." %>
+        </div>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+   
+
+
+

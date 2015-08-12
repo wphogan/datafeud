@@ -11,20 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150207172000) do
+ActiveRecord::Schema.define(version: 20150805205434) do
 
-  create_table "microposts", force: :cascade do |t|
-    t.text     "content"
+  create_table "games", force: :cascade do |t|
+    t.text     "game_name"
+    t.boolean  "private_game", default: true
+    t.text     "issue_area"
+    t.text     "summary"
     t.integer  "user_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "games", ["user_id", "created_at"], name: "index_games_on_user_id_and_created_at"
+  add_index "games", ["user_id"], name: "index_games_on_user_id"
+
+  create_table "questions", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "answer1"
+    t.text     "answer2"
+    t.text     "answer3"
+    t.text     "answer4"
+    t.text     "answer5"
+    t.text     "answer6"
+    t.text     "answer7"
+    t.text     "answer8"
+    t.text     "note"
   end
+
+  add_index "questions", ["game_id", "created_at"], name: "index_questions_on_game_id_and_created_at"
+  add_index "questions", ["game_id"], name: "index_questions_on_game_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "city"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "password_digest"
+    t.string   "remember_digest"
+    t.boolean  "admin",             default: false
+    t.string   "activation_digest"
+    t.boolean  "activated",         default: false
+    t.datetime "activated_at"
+    t.string   "reset_digest"
+    t.datetime "reset_sent_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

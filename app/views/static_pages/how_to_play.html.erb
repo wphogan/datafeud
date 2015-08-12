@@ -1,0 +1,284 @@
+<% provide(:title, 'How to play') %>
+<div class="container">
+  <div class="howto-tabs">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active">
+          <a href="#setup" role="tab" data-toggle="tab">
+              <icon class="fa fa-cog"></icon> Setup
+          </a>
+      </li>
+      <li><a href="#game-play" role="tab" data-toggle="tab">
+          <i class="fa fa-comments-o"></i> Game Play
+          </a>
+      </li>
+      <li>
+          <a href="#operation" role="tab" data-toggle="tab">
+              <i class="fa fa-tachometer"></i> Game Board Operation
+          </a>
+      </li>
+    </ul>
+    
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane fade active in" id="setup">
+        <div class = "how-to-play">
+        
+          <div class = "section-b"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3><i class="fa fa-paperclip"></i> Materials Needed:</h3>
+                <ul>
+                  <li>A laptop with internet access</li>
+                  <li>A modern web browser (Chrome is recommended) with cookies enabled</li>
+                  <li>Projector, or large TV screen connected to your computer</li>
+                  <li>Printed answer-keys: enough for the participants, game-show host, and game operator</li>
+                </ul> 
+              </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section b -->
+          
+          <div class = "section-a"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3>Step 1: Prepare Your Questions</h3>
+                <p><b>Compile relevant questions and answers.</b> Suggestions for sources include: </p>
+                <ul>
+                  <li>Your own survey data!</li>
+                  <li>Data from mainstream sources: reports and studies, census, literature reviews, media, government data.</li>
+                  <li>Data from non-mainstream sources: community research, surveys, community experts, studies, etc.</li>
+                </ul>    
+                <p>Note: Data for questions and answers can be descriptive or numbers based. Questions can have any number of answers but most should have three or more answers. The number of questions created is dependant on the amount of time allocated for game play. Five to six questions should take about 20 minutes. Seven to eight questions should take about 30 minutes to complere. Keep in mind the time needed for post-game discussion (roughly 20 minutes).</p><br>
+                <p><i class="fa fa-exclamation-triangle"></i><b>Tip:</b> Make the first question a warm-up question with multiple answers. Some questions have only one answer. Consider these as bonus questions where each team gets one chance to answer the question.</p><br>
+                <p><b>Example Questions:</b>The Right to the City conducted a national study on the state of public housing in the United States. Part of the study included collecting secondary data on the public housing system. They used Data Feud in 8 cities to share that data back with residents and had a discussion about what the data was saying about their community. Below are samples of fomulated questions and answers based on their data. </p>
+                <div class = "col-md-6" >
+                  <b>1. When public housing units are demolished, what type of housing are those units replaced with?</b>
+                  <ol>
+                    <li>Housing/Section 8 vouchers (37%)</li>
+                    <li>New public housing units (33%)</li>
+                    <li>Market/Private rentals or put on sale (30%)</li>
+                  </ol>
+                </div>
+                <div class = "col-md-6" >
+                  <b>2. What are the themes/topics that come up the most often in newspaper articles about public housing in your city (Oakland)?</b>
+                  <ol>
+                    <li>Poor/Poverty (78)</li>
+                    <li>Disrepair (45)</li>
+                    <li>Gang (34)</li>
+                    <li>Crime (34)</li>
+                  </ol>
+                </div>
+              </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section a -->
+          
+          <div class = "section-b"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3>Step 2: Create a Data Feud Game</h3>
+                <ol>
+                  <li><%= link_to "Create an account", signup_path %></li>
+                  <li>Go to <%= link_to "My Games", current_user %> and click on the create a game button</li>
+                  <li>Follow the on-screen instructions and enter your questions and answers</li>
+                </ol> 
+              </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section b -->
+          
+          <div class = "section-a"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3>Step 3: Pre-game Setup</h3>
+                <p><b>Assign Roles:</b> The game needs a <b>game operator</b> and <b>game-show host</b>. The game operator should practive simulating the game before the workshop. Both host and operator need to be familiar with the game play. 
+                </p><br>
+                <p><b>Print Multiple Answer-Keys:</b> If you already created an account and are logged in, you can print answer keys by going to <%= link_to "My Games", current_user %>, finding your game, and clicking "Print Answer Key" at the bottom of the game's description. Make enough copies to hand out to your audience, host, and game operator. Answer-keys are given out at the end of the game to help facilitate discussion.
+                </p><br>
+                <p><b>Prep for Post-Game Discussion (Optional):</b> We've detailed two options for a post-game discussion. <b>Option 1</b> allows participants to share their reactions to the data. <b>Option 2</b> dives into the differences between mainstream information and community information.
+                </p><br>
+                <div id="accordion">
+                  <h3><i class="fa fa-caret-right"></i> Post-game Discussion: Option 1</h3>
+                  <div>
+                    <p><b>Sharing Reactions to the Data:</b> Data will be understood differently depending on who is the audience. In this activity, the participants will be asked to share their reactions to each question - deepening the collective experience.</p>
+                    <p><i class="fa fa-clock-o"></i><b> Time needed:</b> 25 minutes</p>
+                    <p><i class="fa fa-paperclip"></i><b> Materials needed:</b>
+                      <ul>
+                        <li>Post-its (as many post-its as there are	questions for each participant) </li>
+                        <li>Butcher paper (as many sheets as there are questions)</li>
+                        <li>Markers</li>
+                        <li>Pens (for participants)</li>
+                      </ul>
+                    </p>
+                     <p><i class="fa fa-tasks"></i><b> Post-game discussion setup (done before game begins):</b>
+                      <ul>
+                        <li>Hang the sheets of butcher paper in a visible place.</li>
+                        <li>Number each sheet with a single number (one for each question in the game).</li>
+                        <li>Pass out post-its to the participants. Each participant needs a post-it for each question of the game.</li>
+                        <li>Have participants number each of their post-its sequentially to correspond with the number of the questions (e.g. 1-8 if there are 8 questions in the game).</li>
+                      </ul>
+                    </p>
+                    <p><b>Leading the Discussion:</b> Once the game starts, after each question/round encourage the participants to write down their reaction to the information presented in a few short words on their post-it (e.g. What do they think of the data? It can be short like "no way!", "duh!", "surprising", "interesting", etc.).
+                    </p>
+                    <p>When the game is finished, go the answer key and review each of the questions again (if you've made any notes that provide additional information, share them now). With each question, have a couple of people share what they wront on their post-it. Ask them to elaborate on why they had that reaction.  
+                    </p>
+                    <p>Some guiding questions:
+                    <ul>
+                        <li>Is the answer what you expected?</li>
+                        <li>Is there something in the data that surprised you?</li>
+                        <li>How can this data apply to your work?</li>
+                        <li>Have participants number each of their post-its sequentially to correspond with the number of the questions (e.g. 1-8 if there are 8 questions in the game).</li>
+                      </ul>
+                    </p>
+                    <p>Now have everyone put their post-its on the corresponding numbered butcher paper. Let them spend a few minutes reading each other's responses. Allow time for questions and further discussion.  
+                    </p>
+                  </div>
+                </div>
+                <div id="accordion2">
+                  <h3><i class="fa fa-caret-right"></i> Post-game Discussion: Option 2</h3>
+                  <div>
+                    <p><b>Community vs. Mainstream Info:</b> Often mainstream data differs from what is actually happening on the ground.  The game can be a tool to have discussion about this and lay the foundation for community research.</p>
+                    <p><i class="fa fa-clock-o"></i><b> Time needed:</b> 15 minutes</p>
+                    <p><i class="fa fa-paperclip"></i><b> Materials needed:</b>
+                      <ul>
+                        <li>Butcher paper</li>
+                        <li>Markers</li>
+                      </ul>
+                    </p>
+                    <p><i class="fa fa-tasks"></i><b> Post-game discussion setup (done before game begins):</b>
+                      <ul>
+                        <li>Hang butcher paper in a visible place.</li>
+                      </ul>
+                    </p>
+                     <p><b>Leading the Discussion:</b> When dealing with mainstream data, have a note taker track the answers given by participants during the game – the 'incorrect' ones.  When reviewing the answer key, compare what was said by the participants versus what the mainstream data was.  
+                      <ul>
+                        <li>How is the data different?</li>
+                        <li>What is the community information saying about this issue?</li>
+                        <li>Why do you think the mainstream differs? Is it linked to a political agenda ignoring community experience?</li>
+                        <li>Have participants number each of their post-its sequentially to correspond with the number of the questions (e.g. 1-8 if there are 8 questions in the game).</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+        
+              </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section a -->
+          
+          <div class = "section-b"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3>Step 4: Room Setup & Introductions</h3>
+                <p><b>Room Orientation:</b>The room should have five chairs (or some place where two teams can line up on each side), and a central podium (table) where each person from the team comes up. A projector (or screen) should be setup behind the podium so that the game board is visible.
+                </p>
+                <p><b>Introduction to the Game:</b>
+                  <ul>
+                    <li>Ask if anyone in the audience has seen Family Feud and if they can explain how it works.</li>
+                    <li>Ask for 10 people to volunteer from the audience to create two teams. They should collaborate briefly to come up with a team name.</li>
+                    <li>Have the game operator enter in the team names and launch the game</li>
+                    <li>Printed answer-keys: enough for the participants, game-show host, and game operator</li>
+                  </ul> 
+                </p>
+              </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section b -->
+        </div> <!--how to play-->
+      </div> <!--setup tab-->
+      
+      <div class="tab-pane fade" id="game-play">
+        <div class = "how-to-play">
+          <div class = "section-b"> 
+              <div class = "row">
+                <div class = "col-md-8 col-md-offset-2" >
+                  <h3>Introduction to Game Play:</h3>
+                  <p>Two small teams (5-6 people per team) compete in the Family Feud-style game. There are three main components of the game play:</p>
+                  <p><b>The Face-off:</b> A one-on-one show-down  between players from opposing teams where a question is asked and the first player to ‘buzz-in’ (clap their hands) and respond with a correct answer gains control of the board - i.e. the right for their team to try and guess the remaining answers.</p>
+                  <p><b>The Feud:</b> The team who has won control in the face-off tries to correctly guess all of the answers without first accumulating three strikes (one strike for each incorrect response). </p>
+                  <p><b>The Steal:</b> In the event that a team accumulates three strikes before guessing all the answers in a given round, the opposing team has one chance to ‘steal’ all the points of that round. </p>
+                </div> <!--col 6 -->
+              </div> <!--row  -->
+            </div> <!--section b -->
+          <div class = "section-a"> 
+              <div class = "row">
+                <div class = "col-md-8 col-md-offset-2" >
+                  <h3>The Face-off:</h3>
+                  <p>To start each round of the game, one member of each team is chosen for the "face off" to see which team will gain control of a question. Traditionally, the contestants greet each other with a handshake before the question is read. </p>
+                  <p>Read question aloud to the teams. After the question is read, the two opponents will clap (or buzz in) when they think they have a correct answer.  If the player who buzzes in first gives an answer on the answer board, reveal the correctly-guessed answers based on your answer-key.</p>
+                  <p>If the first player to answer gives an invalid answer, then the player from the opposing team has a chance to guess. Note: No strikes are given for incorrect responses in the Face-Off round.</p>
+                  <p>If the second player guesses incorrectly, then another member from the first team has a chance to guess. This continues until someone answers correctly, at which point they will chose whether or not to <b>play</b> the question or <b>pass</b> it to the other team.</p>
+                  <p> If the team chooses to <b>play</b>, they will begin The Feud part of the game. If they choose to <b>pass</b>, the opposing team is forced to play the question.</p>
+                </div> <!--col 6 -->
+              </div> <!--row  -->
+            </div> <!--section a -->
+            <div class = "section-b"> 
+              <div class = "row">
+                <div class = "col-md-8 col-md-offset-2" >
+                  <h3>The Feud:</h3>
+                  <p>The team who has control of the board begins to guess answers on the board. This starts  with the team member next in line from the player who just faced-off. Team members may not confer with one another while in control of the board. </p>
+                  <p>There is no time limit for answering, but the host has the option to start the one-minute timer built into the game board. </p>
+                  <p>The player makes a guess and if they guess correctly, the answer is revealed on the board. If they guess incorrectly or fail to respond, a single strike is added to the strike counter.</p>
+                  <p>Players on the team controlling the board take turns, sequentially guessing answers until either all answers have been revealed, or three strikes have been accumulated.</p>
+                  <p>If all answers are correctly guessed before three strikes accumulate, a point per answer is awarded to the and the game proceeds to the next question</p>
+                </div> <!--col 6 -->
+              </div> <!--row  -->
+            </div> <!--section b -->
+            <div class = "section-a"> 
+              <div class = "row">
+                <div class = "col-md-8 col-md-offset-2" >
+                  <h3>The Steal:</h3>
+                  <p> If three strikes are accumulated by the team who played the question, the opposing team is given one chance to “steal” the points of the round. Members of the stealing team may confer with each other but must offer one answer.</p>
+                  <p>If the answer offered is on the board, all the points from the round are awarded to the "stealing" team. If the answer offered is not on the board, the first team is awarded all the points for the round.</p>
+                  <p>Any remaining answers are then revealed (formal discussion is scheduled for after the game).</p>
+                </div> <!--col 6 -->
+              </div> <!--row  -->
+            </div> <!--section a -->
+            <div class = "section-b"> 
+              <div class = "row">
+                <div class = "col-md-8 col-md-offset-2" >
+                  <h3>Awarding Points:</h3>
+                  <p>When the round is over, reveal any remaining answers to the audience.</p>
+                  <p>Click "Next" or "Finish" in the bottom right corner of the board and add the appropriate number of points to the winning team's score.</p>
+                </div> <!--col 6 -->
+              </div> <!--row  -->
+            </div> <!--section b -->
+        </div> <!--how to play-->
+      </div> <!--game play tab-->
+      
+      <div class="tab-pane fade" id="operation">
+          <div class = "section-b"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3>Launch your Game:</h3>
+                <ol>
+                  <li>Go to <%= link_to "My Games", current_user %></li>
+                  <li>Click on "Play" located below the summary of your game</li>
+                  <li>Enter two team names and click "Begin"</li>
+                </ol>
+              </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section b -->
+          
+          <div class = "section-a"> 
+            <div class = "row">
+              <div class = "col-md-8 col-md-offset-2" >
+                <h3>Game Board Functionality:</h3>
+                <p>	XXX A. Reveal/conceal answers
+		- Click in the specific answer field to reveal/conceal it.
+	B. Operate strike (red 'X') counter
+		- Simply click the red X's on the bottom of the game board. 
+		- Clicking after all three X's are red will automatically switch 								control of the round to the other team.
+	C. Switch teams depending on whose turn it is
+		- Either use the three-strikes method described above, or click on the 						appropriate team box in lower left/right corner (notice the orange box that 						denotes which team is highlighted).
+	D. Appropriately allocate points at the end of a round
+		1 - Highlight which team is to be awarded with the rounds points (click the 						appropriate team box in lower left/right corner).
+		2 - Only have answers correctly guessed by the winning team revealed and all 					other answers concealed (click in the specific answer field to reveal/conceal it).
+		3 - Click “Award points and continue”  to award points. The number of revealed
+		 answers will be equal to the number of points allocated to the highlighted/winning team.
+	E. Jump to any question
+		- Click link in lower left corner “Question _of 6” and navigate to appropriate question.</p>
+      </div> <!--col 6 -->
+            </div> <!--row  -->
+          </div> <!--section a -->
+      </div> <!--operation-->
+    </div>
+  </div>
+</div>
+

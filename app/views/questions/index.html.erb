@@ -1,0 +1,64 @@
+<% provide(:title, 'Begin') %>
+<% javascript 'cookies' %>
+<% ques_helper %>
+
+<br><br>
+<div class="row">
+    <div class="team-names">
+    <div class="col-md-12"><h2>Enter the Team Names:</h2><br></div>
+        <form action="" name="team_names_form" onchange="change()">
+            <div class="col-md-6">
+              <input type="text" name="team1"  id="team1_name">
+            </div>
+            <div class="col-md-6">
+              <input type="text" name="team2" id="team2_name">
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="alert alert-danger" id="cookie_warning"></div>
+<div class="next_question"> 
+ <% @next = @question_ids[0] %>
+  <%= link_to raw("Begin <i class='fa fa-arrow-right'></i>"),  game_question_path(@game, @next) %><br>
+   
+</div>
+
+<script>
+    var t1_name, t2_name;
+    t1_name = $.cookie('t1');
+    t2_name = $.cookie('t2');
+
+    $.cookie("t1_score", parseInt(0), { expires: 1, path: '/' });
+    $.cookie("t2_score", parseInt(0), { expires: 1, path: '/' });
+    
+    if ((t1_name == null) || (t1_name === 'undefined')){
+        t1_name = "Team 1";
+        document.getElementById('team1_name').value =t1_name;
+        $.cookie('t1', t1_name, { expires: 1, path: '/' });
+    } else {
+        document.getElementById('team1_name').value = t1_name;
+    }
+    if ((t2_name == null) || (t2_name === 'undefined')){
+        t2_name = "Team 2";
+        document.getElementById('team2_name').value = t2_name;
+         $.cookie('t2', t2_name, { expires: 1, path: '/' });
+    } else {
+        document.getElementById('team2_name').value = t2_name;
+    }
+
+function change() {
+    t1_name = document.team_names_form.team1.value; 
+    t2_name = document.team_names_form.team2.value;
+    $.cookie('t1', t1_name, { expires: 1, path: '/' });
+    $.cookie('t2', t2_name, { expires: 1, path: '/' });
+};
+
+// displays a warning if the browser does not have cookies enabled
+  if (navigator.cookieEnabled == false) {
+      document.getElementById('cookie_warning').innerHTML = "This game requires cookies to function properly.";
+  }
+  else {
+      document.getElementById("cookie_warning").style.display = "none";
+  }
+</script>

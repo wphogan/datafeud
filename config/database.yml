@@ -22,4 +22,9 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: datafeud.datacenter.dreamhosters.com
+  adapter: mysql
+  encoding: unicode
+  pool: 5
+  username: datactr
+  password: itstimetoplay!
