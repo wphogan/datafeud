@@ -29,11 +29,11 @@
       
     </span>
  
-  <% if game.private_game? %>
-    <span class="game_name"><b><%= "Private game" %></b></span>
-  <% else %>
-    <span class="game_name"><b><%= "Public game" %></b></span>
-  <% end %>
+  <% #if game.private_game? %>
+    <!--<span class="game_name"><b><%#=  "Private game" %></b></span>-->
+  <% #else %>
+    <!--<span class="game_name"><b><%#= "Public game" %></b></span>-->
+  <% #end %>
   
   <span class="timestamp">
     Created <%= time_ago_in_words(game.created_at) %> ago.

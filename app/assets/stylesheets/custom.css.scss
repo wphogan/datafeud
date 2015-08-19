@@ -468,6 +468,28 @@ span.picture {
   padding-left: 10px;
 }
 
+.side-note {
+  font-style: italic;
+  color: #999;
+}
+
+.divider {
+  font-size: 1.5em;
+  color: #AAA;
+  text-align: center;
+}
+.question-container {
+    background-color: #EAF1F6;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0px;
+    box-shadow: 5px 5px 5px #BBB;
+  
+}
+
+.mock_emptyanswer {
+  display: none;
+}
 //game board styles
 
 .emptyanswer {

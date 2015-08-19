@@ -7,10 +7,10 @@
         <%= f.text_area :game_name, placeholder: "Game title" %>
         <%= f.text_area :issue_area, placeholder: "Issue area" %>
         <%= f.text_area :summary, placeholder: "Game summary" %>
-        <%= label_tag(:private_game, "Private") %>
-        <%= f.radio_button :private_game, true , :checked => true , :value => true %>
-        <%= label_tag(:private_game, "Public") %>
-        <%= f.radio_button :private_game, false, :value => false%>
+        <%#= label_tag(:private_game, "Private") %>
+        <%#= f.radio_button :private_game, true , :checked => true , :value => true %>
+        <%#= label_tag(:private_game, "Public") %>
+        <%#= f.radio_button :private_game, false, :value => false%>
       </div>
       <%= f.submit "Save & Add questions", class: "btn btn-primary" %>
     <% end %>

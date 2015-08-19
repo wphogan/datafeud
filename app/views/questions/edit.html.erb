@@ -58,17 +58,28 @@
         <div class="row">
           <div class="col-md-6" class = "mock_gameboard">
             <div class="mock_answer">
-               <%= f.text_area :answer7, placeholder: "Seventh answer..." %>     
+                 <%= f.text_area :answer7, placeholder: "Seventh answer..." %> 
             </div>
           </div>
           <div class="col-md-6" class = "mock_gameboard">
             <div class="mock_answer">
-               <%= f.text_area :answer8, placeholder: "Eighth answer..." %>     
+               <%= f.text_area :answer8, placeholder: "Eighth answer..." %>
             </div>
+          </div>
+        </div> 
+        
+         <!--note row-->
+        <div class="row">
+          <div class="col-md-12" class = "mock_gameboard">
+            <div class="mock_answer">
+               <%= f.text_area :note, placeholder: "Question notes..." %>     
+            </div>
+            <span class="side-note">*Notes are intended to supplement the question and will only be revealed after the game has been played.</span>
           </div>
         </div> 
 
     </div>
+    <br><br>
 <%= f.submit "Save", class: "btn btn-primary" %>
 
 <% end %>
