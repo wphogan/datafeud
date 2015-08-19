@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+  get 'users' => 'static_pages#home'
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'games/:game_id/questions/finish_game' => 'questions#finish_game'
