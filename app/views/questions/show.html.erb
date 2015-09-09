@@ -266,7 +266,7 @@
     <br>
     <!--if theres a next question-->
 <div class="next_question" style="font-size: 1em;">
-<% if @question.id < @question_ids.min %>
+<% if @question.id < @question_ids.max %>
   <!--link to next question-->
   <% @next = @question.id + 1 %>
   <%= link_to raw("Next <i class='fa fa-arrow-right'></i>"),  game_question_path(@question.game_id, @next) %><br>
