@@ -14,4 +14,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require bootstrap
+//= require_self
+//= require public
+//= require admin
 //= require_tree .
