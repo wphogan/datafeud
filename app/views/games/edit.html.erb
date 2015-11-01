@@ -169,7 +169,7 @@
                
               <div class="row">
                 <div class="col-md-12" class = "mock_gameboard">
-                <% if ((ques.answer8 == "") || (ques.answer8.nil?)) %>
+                <% if ((ques.answer1 == "") || (ques.answer1.nil?)) %>
                   <%= link_to raw(" <i class='fa fa-plus'></i> Add an answer"), edit_game_question_path(ques.game_id, ques.id) %> 
                 <% end %>
                 </div>
